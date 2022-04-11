@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&family=Roboto+Slab:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./static/style.css">
+    <title>Morse Code Translation 摩斯密碼翻譯器</title>
+    <link rel="icon" type="image/x-icon" href="./static/icons8-synchronize-16.png">
+
+</head>
+<body>
+    <div class="panels">
+        <div class="panel">
+          <h3 class="Zh">摩斯密碼翻譯器</h3>
+          <h1>Morse Code Translation</h1>
+          <textarea id="input" row="4" placeholder="type in english translate to Morse Code"></textarea>
+          <div class="symbol">&#11139</div>
+          <textarea id="output" row="4" placeholder="type in Morse Code translate to English"></textarea>
+          <div class="playlist"></div>
+          <div class="buttons">
+            <button class="dark" id="btnMorse">translate to Morse Code</button>
+            <button class="light" id="btnEng">translate to English</button>
+            <button class="line" id="btnPlay">play &#9654</button>
+          </div>
+          <audio class="short" src="http://2017.awiclass.monoame.com/audio/morse/short.mp3"></audio>
+          <audio class="long" src="http://2017.awiclass.monoame.com/audio/morse/long.mp3"></audio>
+        </div>
+        <div class="panel orange">
+          <h3>list translate</h3>
+          <hr/>
+          <ul class="translist"></ul>
+        </div>
+      </div>
+      <div class="decoration">MORSE CODE</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.js"></script>
+    <script src="./static/morse.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+$clrDarkBlue: #2EC4B6
+$clrLightBlue: #CBF3F0
+$clrOrange: #FFBF69
+
+=pad
+  @media(max-width:768px)
+    @content
+    
+=mobile
+  @media(max-width:414px)
+    @content
+
+=size($w,$h:$w,$r:0)
+  width: $w
+  height: $h
+  border-radius: $r
+
+*
+  // border: 1px solid #FF758F
+  font-family: 'Roboto Slab','Noto Serif TC', serif
+  // background-color: $clrDarkBlue
+
+html,body
+  +size(100%)
+  margin: 0 
+  
+body
+  padding: 100px 
+  //   padding不算在寬度內，加上border-box，將框線跟padding包覆在內
+  box-sizing: border-box
+  justify-content: center
+  align-items: center
+  @include pad
+    padding: 50px
+  @include mobile
+    padding: 30px
+  
+h1,h3
+  margin: 0
+  text-align: center
+h1
+  margin-bottom: 30px
+  @include pad
+    font-size: 1em
+h3
+  font-weight: 400
+  @include pad
+    font-size: 0.5em
+  &.Zh
+    letter-spacing: 5px
+    @include pad
+      letter-spacing: 2px
+      line-height: 3em
+    
+textarea
+  +size(100%,auto,0)
+  padding: 10px
+  box-sizing: border-box
+  font-size: 1em
+  letter-spacing: 1px
+  outline: none
+  background-color: #fff
+  &:focus
+    border-color: $clrDarkBlue
+    box-shadow: 0 0 30px rgba($clrDarkBlue,0.05)
+  @include pad
+    font-size: 0.6em
+    
+
+.panels
+  display: flex
+  width: 100%
+  @include pad
+    flex-direction: column
+  
+.panel
+  flex: 5
+  padding: 30px
+  background-color: #fff
+  color: $clrDarkBlue
+  box-shadow: 0 0 30px rgba(black,0.2)
+  border-radius: 5px 
+  position: relative
+  z-index: 1
+  &.orange
+    flex: 4
+    color: #fff
+    background-color: $clrOrange
+  @include pad
+    display: flex
+    flex: 5
+    flex-direction: column
+    &.orange
+      display: flex
+      flex: 5
+    
+    
+
+.buttons
+  display: flex
+  justify-content: center
+  margin-top: 30px
+  @include pad
+    flex-direction: column
+    
+  
+button
+  padding: 10px 20px
+  border-radius: 0.5em
+  margin: 1em
+  font-size: 0.8em
+  color: $clrDarkBlue
+  background-color: #fff
+  border: none
+  &.dark
+    color: #fff
+    background-color: $clrDarkBlue
+  &.light
+    background-color: $clrLightBlue
+  &.line
+    border: solid 1px $clrDarkBlue
+  @include pad
+    font-size: 0.5em
+    
+.symbol
+  font-size: 1.5em
+  text-align: center
+  font-weight: 700 
+hr
+  border: none
+  border-bottom:  2px solid #fff
+  
+.translist
+  display: flex
+  height: 400px
+  flex-wrap: wrap
+  flex-direction: column
+  li
+    margin-bottom: 0.5em
+    font-size: 1em
+    width: 33.3%
+  @include pad
+    height: 150px
+    li
+      font-size: 0.75em
+      width: 25%
+      margin-bottom: 0em
+  @include mobile
+    height: 250px
+    li
+      font-size: 0.6em
+      width: 30%
+      margin-bottom: 0em
+    
+    
+.decoration
+  font-size: 25em
+  color: $clrOrange
+  position: absolute
+  font-weight: 900
+  left: -100px
+  top: -100px
+  opacity: 0.2
+  text-align: center
+  @include pad
+    top: 0
+    left: -25px
+    font-size: 15em
+    transform: rotate(45deg)
+  @include mobile
+    top: 150px
+    left: -150px
+    
+
+  
+.playlist
+  font-size: 1.4em
+  text-align: center
+  line-height: 2em
+  letter-spacing: 4px
+  .playing
+    color: $clrOrange
